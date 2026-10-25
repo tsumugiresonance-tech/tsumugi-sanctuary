@@ -331,7 +331,53 @@
     }
     .portal-title {
       font-size: 13.5px; font-weight: 600; color: var(--text-main);
-      display: block; letter-spacing: 0.02em;
+      display: block; letter-spacing: 0.02em; white-space: nowrap;
+    }
+    .links-horizontal-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .links-horizontal-grid .portal-card {
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-between;
+      padding: 22px 20px;
+      gap: 18px;
+      height: 100%;
+    }
+    .portal-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .portal-card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .links-horizontal-grid .portal-title {
+      font-size: 15px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .links-horizontal-grid .portal-sub {
+      font-family: var(--font-body);
+      font-size: 11.5px;
+      line-height: 1.55;
+      color: var(--text-muted);
+    }
+    @media (max-width: 1180px) {
+      .links-horizontal-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 768px) {
+      .links-horizontal-grid {
+        grid-template-columns: 1fr;
+      }
     }
     .portal-sub {
       font-family: var(--font-mono); font-size: 10px; color: var(--text-dim);
@@ -1028,7 +1074,7 @@
        ========================================================= -->
   <section id="about" class="section-wrap">
     <div class="sec-eyebrow-art">
-      <span>01 // ATELIER & SYNESTHESIA LORE</span>
+      <span>01 // ATELIER & SYNESTHESIA PROFILE</span>
     </div>
     <h2 class="sec-title-art">
       <span class="lang-en">Nice to Meet You — I'm Tsumugi</span>
@@ -1054,10 +1100,10 @@
           <span class="lang-en">Between classes listening to headphones on windy station platforms, my everyday life is quiet and ordinary. Yet to my eyes, chalk tapping against the blackboard sparks mint-green light, and raindrops ripple in soft cyan chords. My lifelong aspiration is to <strong>become a teacher</strong>—reading books on child psychology and attachment theory, dreaming of creating safe spaces that wrap people in warmth like gentle komorebi sunlight.</span>
           <span class="lang-jp">放課後にカフェでラテを飲んだり、駅のホームでヘッドホンを首にかける等身大の日常。<br>
 そんな私の瞳（EQ-Eye）には、黒板を叩くチョークの音がミントグリーンの火花になり、<br>
-窓を打つ雨粒が優しいシアンの和音になって映ります。<br><br>
+窓を打つ雨粒が優しいシアンの和音になって映るの。<br><br>
 私の将来の夢は<strong>「学校の先生になること」</strong>。<br>
-心理学やアタッチメント（愛着）の本を熱心に読みながら、<br>
-誰もが安心して息をつける温かい場所を創りたいと願っています。</span>
+心理学やアタッチメント（愛着）の本を読みながら、<br>
+誰もが木漏れ日みたいに安心して息をつける、温かい居場所を作りたいなって思ってるんだ。</span>
         </p>
 
         <!-- Character Spec Matrix (100% Bilingual EN/JP) -->
@@ -1108,7 +1154,7 @@
 
         <div class="lore-triad">
           <div class="lore-triad-card">
-            <span class="lore-triad-tag">LORE 01</span>
+            <span class="lore-triad-tag">IDENTITY 01</span>
             <div class="lore-triad-title"><span class="lang-en">EQ-Eye (Synesthesia)</span><span class="lang-jp">EQ-Eye（共感覚）</span></div>
             <div class="lore-triad-desc">
               <span class="lang-en">Equalizer bars dance in her irises, perceiving frequencies as floating pastel ribbons.</span>
@@ -1116,7 +1162,7 @@
             </div>
           </div>
           <div class="lore-triad-card">
-            <span class="lore-triad-tag">LORE 02</span>
+            <span class="lore-triad-tag">IDENTITY 02</span>
             <div class="lore-triad-title"><span class="lang-en">Peek-a-boo Color</span><span class="lang-jp">七色のインナーカラー</span></div>
             <div class="lore-triad-desc">
               <span class="lang-en">Delicate light brown blonde hair with an inner soft pastel rainbow peek-a-boo layer.</span>
@@ -1124,10 +1170,10 @@
             </div>
           </div>
           <div class="lore-triad-card">
-            <span class="lore-triad-tag">LORE 03</span>
-            <div class="lore-triad-title"><span class="lang-en">Future Teacher Lore</span><span class="lang-jp">未来の先生志望ロア</span></div>
+            <span class="lore-triad-tag">IDENTITY 03</span>
+            <div class="lore-triad-title"><span class="lang-en">Future Teacher</span><span class="lang-jp">未来の先生志望</span></div>
             <div class="lore-triad-desc">
-              <span class="lang-en">An intellectual gap moe: earnest, studious, reading developmental psychology between classes.</span>
+              <span class="lang-en">Reading child psychology and attachment theory between classes, dreaming of becoming a warm, caring teacher.</span>
               <span class="lang-jp">児童心理や愛着理論を学び、<br>子どもたちの心に寄り添う<br>知的で優しい未来の先生志望。</span>
             </div>
           </div>
@@ -1281,66 +1327,70 @@
       <span class="lang-jp">紡の周波数と深く繋がる公式リンク</span>
     </h2>
 
-    <div class="portals-grid" style="grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); margin-top: 32px;">
-      <a href="https://www.deviantart.com/komorebigirls" target="_blank" class="portal-card primary" style="padding: 22px 24px;">
-        <div class="portal-left">
+    <div class="links-horizontal-grid">
+      <a href="https://www.deviantart.com/komorebigirls" target="_blank" class="portal-card primary">
+        <div class="portal-card-top">
           <div class="portal-icon-badge lg icon-da" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.207 4.794l.23-.43V0H15.07l-.436.44-2.058 3.925-.646.436H4.58v5.993h4.04l.36.436-4.175 7.98-.24.43V24H8.93l.436-.44 2.07-3.925.644-.436h7.35v-5.993h-4.05l-.36-.438 4.186-7.977z"/></svg>
           </div>
-          <div>
-            <span class="portal-title" style="font-size: 16px;"><span class="lang-en">DeviantArt Sanctuary</span><span class="lang-jp">DeviantArt 公式聖域</span></span>
-            <span class="portal-sub" style="font-size: 11.5px; margin-top: 4px;"><span class="lang-en">Original Headquarters // 668+ Artworks</span><span class="lang-jp">本拠地ギャラリー // 668点以上のイラスト＆長編小説</span></span>
-          </div>
+          <span class="portal-arrow">↗</span>
         </div>
-        <span class="portal-arrow">↗</span>
+        <div class="portal-card-body">
+          <span class="portal-title"><span class="lang-en">DeviantArt Sanctuary</span><span class="lang-jp">DeviantArt 公式聖域</span></span>
+          <span class="portal-sub"><span class="lang-en">Original Headquarters<br>668+ Artworks & Novels</span><span class="lang-jp">本拠地ギャラリー<br>668点以上の作品＆長編小説</span></span>
+        </div>
       </a>
-      <a href="https://www.deviantart.com/komorebigirls/subscriptions" target="_blank" class="portal-card" style="padding: 22px 24px; border-color: rgba(251,191,36,0.4); background: linear-gradient(135deg, rgba(251,191,36,0.08), rgba(244,114,182,0.08));">
-        <div class="portal-left">
+
+      <a href="https://www.deviantart.com/komorebigirls/subscriptions" target="_blank" class="portal-card" style="border-color: rgba(251,191,36,0.4); background: linear-gradient(135deg, rgba(251,191,36,0.08), rgba(244,114,182,0.08));">
+        <div class="portal-card-top">
           <div class="portal-icon-badge lg icon-vip" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>
           </div>
-          <div>
-            <span class="portal-title" style="font-size: 16px; color: #fde68a;"><span class="lang-en">VIP Subscriber Lounge</span><span class="lang-jp">VIP 秘密の観測室 (Sub)</span></span>
-            <span class="portal-sub" style="font-size: 11.5px; margin-top: 4px;"><span class="lang-en">4K Unwatermarked Archives & Secret Diaries</span><span class="lang-jp">4K高画質アーカイブ＆限定シークレット日記</span></span>
-          </div>
+          <span class="portal-arrow">↗</span>
         </div>
-        <span class="portal-arrow">↗</span>
+        <div class="portal-card-body">
+          <span class="portal-title" style="color: #fde68a;"><span class="lang-en">VIP Subscriber Lounge</span><span class="lang-jp">VIP 秘密の観測室</span></span>
+          <span class="portal-sub"><span class="lang-en">4K Unwatermarked Archives<br>& Exclusive Secret Diaries</span><span class="lang-jp">4K高画質アーカイブ＆<br>限定シークレット日記</span></span>
+        </div>
       </a>
-      <a href="https://www.youtube.com/@KomorebiGirls_Tsumugi" target="_blank" class="portal-card" style="padding: 22px 24px;">
-        <div class="portal-left">
+
+      <a href="https://www.youtube.com/@KomorebiGirls_Tsumugi" target="_blank" class="portal-card">
+        <div class="portal-card-top">
           <div class="portal-icon-badge lg icon-yt" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
           </div>
-          <div>
-            <span class="portal-title" style="font-size: 16px;"><span class="lang-en">YouTube Channel</span><span class="lang-jp">YouTube 公式チャンネル</span></span>
-            <span class="portal-sub" style="font-size: 11.5px; margin-top: 4px;"><span class="lang-en">Official Music Videos & Synesthesia Visuals</span><span class="lang-jp">原作小説連動の公式MV＆ショート動画</span></span>
-          </div>
+          <span class="portal-arrow">↗</span>
         </div>
-        <span class="portal-arrow">↗</span>
+        <div class="portal-card-body">
+          <span class="portal-title"><span class="lang-en">YouTube Channel</span><span class="lang-jp">YouTube 公式チャンネル</span></span>
+          <span class="portal-sub"><span class="lang-en">Official Music Videos<br>& Synesthesia Shorts</span><span class="lang-jp">原作小説連動の公式MV＆<br>共感覚ショート動画</span></span>
+        </div>
       </a>
-      <a href="https://discord.gg/J9m7c8mPkU" target="_blank" class="portal-card" style="padding: 22px 24px;">
-        <div class="portal-left">
+
+      <a href="https://discord.gg/J9m7c8mPkU" target="_blank" class="portal-card">
+        <div class="portal-card-top">
           <div class="portal-icon-badge lg icon-dc" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
           </div>
-          <div>
-            <span class="portal-title" style="font-size: 16px;"><span class="lang-en">Discord Terminal</span><span class="lang-jp">Discord 観測者ラウンジ</span></span>
-            <span class="portal-sub" style="font-size: 11.5px; margin-top: 4px;"><span class="lang-en">Community Discussions & Status Logs</span><span class="lang-jp">ファン交流＆毎週のレゾナンス・ログ配信</span></span>
-          </div>
+          <span class="portal-arrow">↗</span>
         </div>
-        <span class="portal-arrow">↗</span>
+        <div class="portal-card-body">
+          <span class="portal-title"><span class="lang-en">Discord Terminal</span><span class="lang-jp">Discord 観測者ラウンジ</span></span>
+          <span class="portal-sub"><span class="lang-en">Community Discussions<br>& Weekly Status Logs</span><span class="lang-jp">ファン交流＆毎週の<br>レゾナンス・ログ配信</span></span>
+        </div>
       </a>
-      <a href="https://jp.pinterest.com/tsumugiresonance/" target="_blank" class="portal-card" style="padding: 22px 24px;">
-        <div class="portal-left">
+
+      <a href="https://jp.pinterest.com/tsumugiresonance/" target="_blank" class="portal-card">
+        <div class="portal-card-top">
           <div class="portal-icon-badge lg icon-pin" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.592 0 12.017 0z"/></svg>
           </div>
-          <div>
-            <span class="portal-title" style="font-size: 16px;"><span class="lang-en">Pinterest Gallery</span><span class="lang-jp">Pinterest ビジュアル図鑑</span></span>
-            <span class="portal-sub" style="font-size: 11.5px; margin-top: 4px;"><span class="lang-en">Visual Catalog & Seasonal Outfits</span><span class="lang-jp">季節の衣装カタログ＆イラストコレクション</span></span>
-          </div>
+          <span class="portal-arrow">↗</span>
         </div>
-        <span class="portal-arrow">↗</span>
+        <div class="portal-card-body">
+          <span class="portal-title"><span class="lang-en">Pinterest Gallery</span><span class="lang-jp">Pinterest ビジュアル図鑑</span></span>
+          <span class="portal-sub"><span class="lang-en">Visual Catalog &<br>Seasonal Outfits</span><span class="lang-jp">季節の衣装カタログ＆<br>イラストコレクション</span></span>
+        </div>
       </a>
     </div>
   </section>
@@ -1384,7 +1434,7 @@
 
     <div class="footer-links-col">
       <div class="footer-links-heading">NAVIGATION</div>
-      <a href="#about" class="footer-link"><span class="lang-en">01 // About Me & EQ-Eye</span><span class="lang-jp">01 // 私について・共感覚ロア</span></a>
+      <a href="#about" class="footer-link"><span class="lang-en">01 // About Me & EQ-Eye</span><span class="lang-jp">01 // 私について・共感覚の世界</span></a>
       <a href="#music" class="footer-link"><span class="lang-en">02 // Music & Light Novels</span><span class="lang-jp">02 // 音楽と原作小説 (全9曲)</span></a>
       <a href="#series" class="footer-link"><span class="lang-en">03 // 35 Series Archive</span><span class="lang-jp">03 // 長編シリーズアーカイブ (35章)</span></a>
       <a href="#gallery" class="footer-link"><span class="lang-en">04 // Curated Masterpiece Gallery</span><span class="lang-jp">04 // 厳選名作ギャラリー</span></a>
