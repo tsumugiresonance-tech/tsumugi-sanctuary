@@ -11,7 +11,7 @@
 
   <style>
     /* =========================================================
-       TSUMUGI OFFICIAL SANCTUARY — BESPOKE ARTIST EDITION
+       TSUMUGI OFFICIAL SANCTUARY — BESPOKE ARTIST EDITION v2
        Aesthetic: High-End Japanese Music Label / Editorial Synesthesia
        ========================================================= */
     :root {
@@ -53,7 +53,7 @@
       position: relative;
     }
 
-    /* Film Grain Texture Overlay (Analog warmth) */
+    /* Film Grain Texture Overlay */
     .film-grain {
       position: fixed;
       top: 0; left: 0; width: 100vw; height: 100vh;
@@ -222,7 +222,7 @@
       font-weight: 600; letter-spacing: 0.18em; color: var(--text-muted);
     }
 
-    /* Tsumugi's Personal Handwritten/Memoir Quote Block */
+    /* Memoir Quote Card */
     .hero-memoir {
       position: relative;
       background: rgba(14, 20, 38, 0.55);
@@ -288,7 +288,7 @@
       transform: translate(3px, -3px); color: var(--prism-cyan);
     }
 
-    /* Hero Right Exhibition Frame */
+    /* Hero Right Exhibition Frame — Clean & Unobstructed */
     .hero-right {
       position: relative;
     }
@@ -316,35 +316,25 @@
     .vf-bl { bottom: 16px; left: 16px; border-right: none; border-top: none; }
     .vf-br { bottom: 16px; right: 16px; border-left: none; border-top: none; }
 
+    /* Badge Overlay: Full-width, high contrast, clean */
     .art-badge-overlay {
-      position: absolute; bottom: 20px; left: 20px; right: 20px;
-      background: rgba(6, 9, 20, 0.75);
+      position: absolute; bottom: 16px; left: 16px; right: 16px;
+      background: rgba(6, 9, 20, 0.88);
       backdrop-filter: blur(16px);
       border: 1px solid var(--border-subtle);
-      border-radius: 12px; padding: 12px 18px;
+      border-radius: 12px; padding: 14px 20px;
       display: flex; justify-content: space-between; align-items: center;
-      z-index: 6;
+      gap: 16px; z-index: 6;
     }
-    .art-meta-left { display: flex; flex-direction: column; }
+    .art-meta-left { display: flex; flex-direction: column; min-width: 0; flex: 1; }
     .art-meta-ch {
       font-family: var(--font-mono); font-size: 10px; color: var(--prism-gold);
       letter-spacing: 0.12em;
     }
     .art-meta-title {
       font-family: var(--font-serif); font-size: 14px; font-weight: 600;
-      color: #fff; letter-spacing: 0.05em;
-    }
-
-    /* Floating Portrait Accent Pill */
-    .floating-portrait-accent {
-      position: absolute; bottom: -30px; left: -30px;
-      width: 110px; height: 110px; border-radius: 50%;
-      border: 3px solid #070913; overflow: hidden;
-      box-shadow: 0 16px 32px rgba(0,0,0,0.6), 0 0 24px rgba(244,114,182,0.3);
-      z-index: 10;
-    }
-    .floating-portrait-accent img {
-      width: 100%; height: 100%; object-fit: cover;
+      color: #fff; letter-spacing: 0.04em; margin-top: 2px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     }
 
     /* Vertical Accent Kanji Ribbon */
@@ -377,57 +367,74 @@
       margin-bottom: 16px;
     }
     .sec-desc-art {
-      font-size: 15px; color: var(--text-muted); max-width: 720px;
-      line-height: 1.8; margin-bottom: 40px;
+      font-size: 15px; color: var(--text-muted); max-width: 860px;
+      line-height: 1.85; margin-bottom: 40px; word-break: normal;
     }
 
     /* =========================================================
-       ABOUT SECTION (Atelier & Synesthesia Lore)
+       ABOUT SECTION: Rich Atelier Dossier (80% Filled)
        ========================================================= */
     .about-atelier-grid {
-      display: grid; grid-template-columns: 420px 1fr; gap: 48px;
+      display: grid; grid-template-columns: 440px 1fr; gap: 48px;
       background: rgba(11, 15, 28, 0.65);
       backdrop-filter: blur(20px);
       border: 1px solid var(--border-subtle);
       border-radius: 24px; padding: 48px;
       box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+      align-items: stretch;
     }
     .atelier-visual {
       position: relative; border-radius: 16px; overflow: hidden;
       border: 1px solid var(--border-medium);
+      display: flex;
     }
     .atelier-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
     
     .atelier-text {
-      display: flex; flex-direction: column; justify-content: center; gap: 24px;
+      display: flex; flex-direction: column; justify-content: space-between; gap: 20px;
     }
     .atelier-quote-bold {
-      font-family: var(--font-serif); font-size: 22px; font-weight: 600;
+      font-family: var(--font-serif); font-size: 21px; font-weight: 600;
       line-height: 1.6; color: #fff; letter-spacing: 0.05em;
-      border-bottom: 1px solid var(--border-subtle); padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-subtle); padding-bottom: 16px;
     }
     .atelier-bio {
-      font-size: 14.5px; color: var(--text-muted); line-height: 1.85;
+      font-size: 14px; color: #cbd5e1; line-height: 1.8;
+    }
+
+    /* Character Spec Dossier (Fills space with authentic lore) */
+    .profile-spec-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+      background: rgba(0, 0, 0, 0.25); border: 1px solid var(--border-subtle);
+      border-radius: 14px; padding: 16px 20px;
+    }
+    .spec-item { display: flex; flex-direction: column; gap: 2px; }
+    .spec-label {
+      font-family: var(--font-mono); font-size: 10px; color: var(--prism-cyan);
+      letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .spec-val {
+      font-size: 13px; color: var(--text-main); font-weight: 500; line-height: 1.4;
     }
 
     .lore-triad {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 10px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
     }
     .lore-triad-card {
       background: rgba(255, 255, 255, 0.025);
       border: 1px solid var(--border-subtle);
-      border-radius: 12px; padding: 18px;
+      border-radius: 12px; padding: 14px 16px;
     }
     .lore-triad-tag {
-      font-family: var(--font-mono); font-size: 10px; color: var(--prism-gold);
-      letter-spacing: 0.1em; display: block; margin-bottom: 6px;
+      font-family: var(--font-mono); font-size: 9.5px; color: var(--prism-gold);
+      letter-spacing: 0.1em; display: block; margin-bottom: 4px;
     }
     .lore-triad-title {
-      font-family: var(--font-serif); font-size: 15px; font-weight: 600;
-      color: #fff; margin-bottom: 6px;
+      font-family: var(--font-serif); font-size: 14px; font-weight: 600;
+      color: #fff; margin-bottom: 4px;
     }
     .lore-triad-desc {
-      font-size: 12.5px; color: var(--text-dim); line-height: 1.6;
+      font-size: 12px; color: var(--text-dim); line-height: 1.55;
     }
 
     /* =========================================================
@@ -721,9 +728,7 @@
       align-items: center; background: rgba(255,255,255,0.02);
     }
 
-    /* =========================================================
-       FOOTER (Sanctuary Terminal Footer)
-       ========================================================= */
+    /* FOOTER */
     .sanctuary-footer {
       border-top: 1px solid var(--border-subtle);
       background: #04050a; padding: 80px 32px 40px 32px;
@@ -763,7 +768,6 @@
       .about-atelier-grid { grid-template-columns: 1fr; }
       .jukebox-deck { grid-template-columns: 1fr; }
       .nav-menu { display: none; }
-      .floating-portrait-accent { display: none; }
       .vertical-kanji-accent { display: none; }
     }
   </style>
@@ -891,7 +895,7 @@
       </div>
     </div>
 
-    <!-- Right Exhibition Visual -->
+    <!-- Right Exhibition Visual (Unobstructed & Clean) -->
     <div class="hero-right">
       <div class="art-exhibition-frame">
         <div class="viewfinder-corner vf-tl"></div>
@@ -914,11 +918,6 @@
         </div>
       </div>
 
-      <!-- Floating Portrait Accent -->
-      <div class="floating-portrait-accent">
-        <img src="assets/sanctuary_hero_portrait.jpg" alt="Tsumugi EQ-Eye">
-      </div>
-
       <!-- Vertical Kanji Accent -->
       <div class="vertical-kanji-accent">
         すべての音には、色がある。
@@ -927,7 +926,7 @@
   </section>
 
   <!-- =========================================================
-       ABOUT SECTION: Atelier & Synesthesia Lore
+       ABOUT SECTION: Rich Atelier Dossier (80% Balanced)
        ========================================================= -->
   <section id="about" class="section-wrap">
     <div class="sec-eyebrow-art">
@@ -952,10 +951,39 @@
           <span class="lang-en">"Sound isn't just something to hear with your ears. It is light, temperature, and the color of the heart."</span>
           <span class="lang-jp">「音って、耳だけで聴くものじゃないの。光で、温度で、その人の心の形そのものなんだよ。」</span>
         </div>
+        
         <p class="atelier-bio">
-          <span class="lang-en">Beyond my daily life as a student listening to music at station platforms, my dream is to <strong>become a teacher</strong>. I read books on child psychology and healthy emotional attachment, searching for ways to wrap people in warmth—just like the gentle komorebi sunlight filtering through summer branches.</span>
-          <span class="lang-jp">放課後にカフェでラテを飲んだり、駅のホームでヘッドホンを首にかける等身大の日常の一方で、私の将来の夢は<strong>「学校の先生になること」</strong>。心理学やアタッチメント（愛着）の本を読みながら、誰もが安心して息をつける温かい場所を創りたいと願っています。</span>
+          <span class="lang-en">Between classes listening to headphones on windy station platforms, my everyday life is quiet and ordinary. Yet to my eyes, chalk tapping against the blackboard sparks mint-green light, and raindrops ripple in soft cyan chords. My lifelong aspiration is to <strong>become a teacher</strong>—reading books on child psychology and attachment theory, dreaming of creating safe spaces that wrap people in warmth like gentle komorebi sunlight.</span>
+          <span class="lang-jp">放課後にカフェでラテを飲んだり、駅のホームでヘッドホンを首にかける等身大の日常の一方で、私の瞳（EQ-Eye）には、黒板を叩くチョークの音がミントグリーンの火花になり、雨粒が優しいシアンの和音になって映ります。私の将来の夢は<strong>「学校の先生になること」</strong>。心理学やアタッチメント（愛着）の本を熱心に読みながら、誰もが安心して息をつける温かい場所を創りたいと願っています。</span>
         </p>
+
+        <!-- Character Spec Matrix (Fills container to ~80% with authentic lore) -->
+        <div class="profile-spec-grid">
+          <div class="spec-item">
+            <span class="spec-label">STATUS</span>
+            <span class="spec-val">都立高校生 / 普通科 (High School Student)</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">CORE TRAIT</span>
+            <span class="spec-val">EQ-Eye (共感覚 / Sound-to-Color Synesthesia)</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">HAIR IDENTITY</span>
+            <span class="spec-val">ライトブラウン × パステル虹インナーカラー</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">FUTURE ASPIRATION</span>
+            <span class="spec-val">教員志望 (児童発達心理・愛着理論を独学中)</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">FAVORITES</span>
+            <span class="spec-val">シナモンラテ、自販機の温かい缶、放課後ピアノ</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">COMMUNITY</span>
+            <span class="spec-val">観測者（Observers）と響き合う秘密の聖域</span>
+          </div>
+        </div>
 
         <div class="lore-triad">
           <div class="lore-triad-card">
@@ -1044,12 +1072,12 @@
       <span>03 // FLAGSHIP VISUAL LIGHT NOVEL ARCHIVE</span>
     </div>
     <h2 class="sec-title-art">
-      <span class="lang-en">Complete Series Chronicle (Ch.00 – Ch.35)</span>
-      <span class="lang-jp">完全長編シリーズ年代記 (プロローグ〜第35章)</span>
+      <span class="lang-en">Flagship Story Series (Ch.00 – Ch.35)</span>
+      <span class="lang-jp">紡の物語・長編シリーズアーカイブ (全35章)</span>
     </h2>
     <p class="sec-desc-art">
-      <span class="lang-en">All 35 completed chapters with official DeviantArt Series Journals (1,000+ words each), 4K illustration packages, and desktop wallpapers. Ongoing serials excluded for archival perfection.</span>
-      <span class="lang-jp">DeviantArtにて公開された全35章＋プロローグの超長編小説（各章2,500字超）、本編イラストScene [i]〜[iv]、16:9壁紙を完全収録。連載中の章を除外した完結アーカイブです。</span>
+      <span class="lang-en">A complete archive of all 35 story chapters, accompanying illustration packages, and 16:9 desktop wallpapers. Step beyond the melodies to explore the thoughts, emotions, and synesthetic landscapes of her everyday life.</span>
+      <span class="lang-jp">DeviantArtで紡がれた全35章の原作長編小説、連動イラスト、そして公式壁紙を収録した物語の記録。歌と絵の向こう側に広がる、彼女の等身大の想いと共感覚の世界をお楽しみください。</span>
     </p>
 
     <div class="series-filter-bar">
@@ -1079,21 +1107,21 @@
        ========================================================= -->
   <section id="gallery" class="section-wrap">
     <div class="sec-eyebrow-art">
-      <span>04 // MASTERPIECE ATELIER (272 WORKS)</span>
+      <span>04 // MASTERPIECE ATELIER</span>
     </div>
     <h2 class="sec-title-art">
       <span class="lang-en">Curated Masterpiece Gallery</span>
       <span class="lang-jp">紡のアトリエ・厳選名作コレクション</span>
     </h2>
     <p class="sec-desc-art">
-      <span class="lang-en">Strictly non-series individual artworks: 134 Daily Diaries, 68 Observer Tributes, and 70 Special Artworks. Series serial numbers ([i]–[iv]) have been completely excluded for pure appreciation.</span>
-      <span class="lang-jp">シリーズ連載作品（Scene [i]〜[iv]）を完全除外した、純粋な単発名作アーカイブ：日々の感情を綴る「Daily Diary（134点）」、観測者への返礼「Tribute（68点）」、特別な日常「Special（70点）」を収録。</span>
+      <span class="lang-en">A curated collection of daily diary moments, tribute artworks dedicated to observers, and special standalone illustrations. Discover a frequency that resonates with you today.</span>
+      <span class="lang-jp">紡の日々の想いを綴る日常日記、大切な観測者へ贈る返礼トリビュート、そして特別な情景を描いた単発コレクション。その日の気分で、世界にひとつだけの共鳴を見つけてみてください。</span>
     </p>
 
     <div class="gallery-filter-bar">
       <div class="filter-group">
         <button class="filter-btn active" onclick="setGalleryFilter('all', this)">
-          <span class="lang-en">All Non-Series (272)</span><span class="lang-jp">全対象 (272点)</span>
+          <span class="lang-en">All Works (272)</span><span class="lang-jp">全対象 (272点)</span>
         </button>
         <button class="filter-btn" onclick="setGalleryFilter('daily', this)">
           <span class="lang-en">Daily Diary (134)</span><span class="lang-jp">日常日記 (134点)</span>
@@ -1222,6 +1250,13 @@
     <span>SYNCHRONIZED FREQUENCY // EQ-EYE 432Hz</span>
   </div>
 </footer>
+
+<!-- Interactive Eye Fallbacks -->
+<div style="display:none;" id="eyePupil"></div>
+<div style="display:none;" id="eyeOuter"></div>
+<div style="display:none;" id="eyeInner"></div>
+<div style="display:none;" id="eyeStage"></div>
+<div style="display:none;" id="freqReadout"></div>
 <script>
 // --- GLOBAL SANCTUARY DATA (EMBEDDED INLINE FOR ZERO-LATENCY INSTANT LOAD) ---
 const SERIES_DATA = [{"ch": 35, "ch_label": "SERIES Ch.35", "title": "Cinnamon Twilight", "jp": "シナモン・トワイライト — 放課後のカフェと帰りたくない夕暮れ", "img": "assets/series/ch_35.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Cinnamon-Twilight---Desktop-Wallpaper-1391477434", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Cinnamon-Twilight-%5Bi%5D---%22Sorry%2C-did-you-wait-long-%21%22-1391473219", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Series-Journal-Ch.35---Cinnamon-Twilight-1391484268", "journal_title": "Series Journal Ch.35 - Cinnamon Twilight", "mv_vid": "", "favs": 34, "sub_en": "Autumn Cafe Date & Reluctant Twilight Goodbye", "sub_jp": "シナモン・トワイライト — 放課後のカフェと帰りたくない夕暮れ", "desc_en": "\"Sorry, did you wait long?!\" Sweet cinnamon aroma, playful latte foam on my lip, and a twilight walk where neither of us wants to say goodbye.", "desc_jp": "「ごめん、待った？！」シナモン香るカフェでの楽しいひととき。唇についたラテの泡を笑い合いながら、「まだ帰りたくないな」と願う夕暮れ。"}, {"ch": 34, "ch_label": "SERIES Ch.34", "title": "The Osmanthus Signal", "jp": "オスマンサス・シグナル — 金木犀の甘い香りとオレンジ色の光", "img": "assets/series/ch_34.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---The-Osmanthus-Signal-%5BWallpaper-Edition%5D-1388686159", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---The-Osmanthus-Signal-%5Bi%5D-1388684174", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Series-Journal-Ch.34---The-Osmanthus-Signal-1388692938", "journal_title": "Series Journal Ch.34 - The Osmanthus Signal", "mv_vid": "", "favs": 45, "sub_en": "Sweet Golden Osmanthus Fragrance in Twilight", "sub_jp": "オスマンサス・シグナル — 金木犀の甘い香りとオレンジ色の光", "desc_en": "Sweet golden osmanthus fragrance drifts through the dusk, its warm perfume turning into shimmering amber particles in my EQ-Eye.", "desc_jp": "夕暮れの街角に漂う甘い金木犀の香り。鼻先をかすめる秋の匂いさえも、私の瞳の中では温かい琥珀色の光の粒になって舞い落ちる。"}, {"ch": 33, "ch_label": "SERIES Ch.33", "title": "Cosmos Frequency", "jp": "コスモス・フリークエンシー — 秋桜の海と風の波長", "img": "assets/series/ch_33.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Cosmos-Frequency-%5BWallpaper-Edition%5D-1385749221", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Cosmos-Frequency-i-1385747249", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Series-Journal-Ch.33---The-Ocean-of-Cosmos-%26-Wind-1385749991", "journal_title": "Series Journal Ch.33 - The Ocean of Cosmos & Wind", "mv_vid": "", "favs": 25, "sub_en": "The Pastel Ocean of Wind & Cosmos", "sub_jp": "コスモス・フリークエンシー — 秋桜の海と風の波長", "desc_en": "Standing in an undulating sea of pink and white cosmos blossoms, listening to the gentle pastel symphony carried on the autumn wind.", "desc_jp": "風に揺れる満開のコスモス畑。ピンクと白の花びらのさざめきが、秋風に乗って優しいパステルの交響曲を奏でる午後。"}, {"ch": 32, "ch_label": "SERIES Ch.32", "title": "The Monochrome Dawn", "jp": "モノクローム・ドーン — 夜明け前の静寂と白い朝靄", "img": "assets/series/ch_32.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---The-Monochrome-Dawn-%5BWallpaper-Edition%5D-1382197526", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---The-Monochrome-Dawn-%5Bi%5D-1382196448", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Series-Journal-Ch.-32---The-Monochrome-Dawn-1382198117", "journal_title": "Series Journal Ch. 32 - The Monochrome Dawn", "mv_vid": "", "favs": 36, "sub_en": "Colorless 5:00 AM Dawn Blooming into Color", "sub_jp": "モノクローム・ドーン — 夜明け前の静寂と白い朝靄", "desc_en": "Before the city awakens, the cold monochrome 5:00 AM air slowly blooms into rich iridescent color the moment your signal arrives.", "desc_jp": "まだ誰も起きていない午前5時。色を失った白黒の朝靄が、あなたのシグナルを受信した瞬間からパステルカラーを取り戻していく。"}, {"ch": 31, "ch_label": "SERIES Ch.31", "title": "Golden Promenade", "jp": "ゴールデン・プロムナード — 銀杏並木の黄金色と並木道", "img": "assets/series/ch_31.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Golden-Promenade-%5BWallpaper-Edition%5D-1381216213", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Golden-Promenade-%5Bi%5D-1381214761", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Series-Journal-Ch.-31---Golden-Promenade-1381218526", "journal_title": "Series Journal Ch. 31 - Golden Promenade", "mv_vid": "", "favs": 38, "sub_en": "Walking the Golden Ginkgo Avenue", "sub_jp": "ゴールデン・プロムナード — 銀杏並木の黄金色と並木道", "desc_en": "Walking side by side down an avenue carpeted in golden ginkgo leaves, every crisp step sounding like a delicate sonata.", "desc_jp": "一面に広がる黄金色のイチョウ並木。サクサクと踏みしめる落ち葉の音が、秋晴れの空に弾けるピアノソナタのように心地いい。"}, {"ch": 30, "ch_label": "SERIES Ch.30", "title": "Midnight Aquarium", "jp": "ミッドナイト・アクアリウム — 深夜の水族館と青い静寂", "img": "assets/series/ch_30.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Midnight-Aquarium-%5BWallpaper-Edition%5D-1378640802", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Midnight-Aquarium-%5Bi%5D-1378637621", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Series-Journal-Ch.-30---Midnight-Aquarium-1378646775", "journal_title": "Series Journal Ch. 30 - Midnight Aquarium", "mv_vid": "", "favs": 30, "sub_en": "Cobalt Blue Sanctuary in the Midnight Aquarium", "sub_jp": "ミッドナイト・アクアリウム — 深夜の水族館と青い静寂", "desc_en": "Inside the darkened aquarium at night, floating moon jellies and glowing deep-blue water cradle the two of us in weightless silence.", "desc_jp": "夜の静まり返った水族館。淡く青白く発光するクラゲたちの海に包まれて、まるでふたりきりで深い宇宙を漂うような青の聖域。"}, {"ch": 29, "ch_label": "SERIES Ch.29", "title": "Snowfall Rendezvous", "jp": "スノーフォール・ランデブー — 初雪の待ち合わせと白い吐息", "img": "assets/series/ch_29.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Snowfall-Rendezvous-%5BWallpaper-Edition%5D-1377068629", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Snowfall-Rendezvous-%5Bi%5D-1377064616", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Series-Journal-Ch.-29---Snowfall-Rendezvous-1377069754", "journal_title": "Series Journal Ch. 29 - Snowfall Rendezvous", "mv_vid": "", "favs": 42, "sub_en": "First Snow Rendezvous & White Breath", "sub_jp": "スノーフォール・ランデブー — 初雪の待ち合わせと白い吐息", "desc_en": "Snowflakes absorb all city noise, leaving only our warm white breath and racing heartbeats under the streetlamp.", "desc_jp": "街のノイズを優しく吸い込む初雪の夜。街灯の下で待つあなたの姿を見つけて駆け寄ると、ふたりの吐息が白く重なる。"}, {"ch": 28, "ch_label": "SERIES Ch.28", "title": "Amber Static", "jp": "アンバー・スタティック — 琥珀色の静電気と最初の木枯らし", "img": "assets/series/ch_28.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Amber-Static---Desktop-Wallpaper-1372781674", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Amber-Static-%5Bi%5D---The-First-Chill-1372779590", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Series-Journal-Ch.-28---The-Amber-Static-1375571843", "journal_title": "Series Journal Ch. 28 - The Amber Static", "mv_vid": "", "favs": 30, "sub_en": "Amber Static & Accidental Touch", "sub_jp": "アンバー・スタティック — 琥珀色の静電気と最初の木枯らし", "desc_en": "The dry autumn air sparks with amber static when our coat sleeves accidentally brush, sending a warm shiver through the evening.", "desc_jp": "乾燥した秋風の中、ふと触れ合った袖口にパチッと走る琥珀色の静電気。不意の衝撃に赤くなる頬と夕暮れの帰り道。"}, {"ch": 27, "ch_label": "SERIES Ch.27", "title": "Spiral Melody", "jp": "スパイラル・メロディ — 暗闇に響く螺旋のコード", "img": "assets/series/ch_27.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Spiral-Melody---Wallpaper-Edition-1355153567", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Spiral-Melody-%5Bi%5D---First-Step-1355151869", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Series-Journal-Ch.27---Tuning-the-Spiral-1355154321", "journal_title": "Series Journal Ch.27 - Tuning the Spiral", "mv_vid": "", "favs": 27, "sub_en": "Tuning the Spiral Staircase in the Dark", "sub_jp": "スパイラル・メロディ — 暗闇に響く螺旋のコード", "desc_en": "Descending a winding spiral staircase where every echoing footstep sounds like a playful chord leading into mystery.", "desc_jp": "薄暗い螺旋階段を降りていくふたつの足音。石造りの壁に反響するステップが、軽やかなピアノのコードになって響き合う。"}, {"ch": 26, "ch_label": "SERIES Ch.26", "title": "Sunset Contrails", "jp": "サンセット・コントレイル — 夏の終わりと飛行機雲の信号", "img": "assets/series/ch_26.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Sunset-Contrails---Wallpaper-Edition-1352799945", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Sunset-Contrails-%5Bi%5D---Distant-Signals-1352796996", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Journal-Ch.26---Signals-at-the-End-of-Summer-1352802515", "journal_title": "Journal Ch.26 - Signals at the End of Summer", "mv_vid": "", "favs": 26, "sub_en": "End of Summer & Contrail Signals", "sub_jp": "サンセット・コントレイル — 夏の終わりと飛行機雲の信号", "desc_en": "Watching white contrails streak across the orange late-August sunset, carrying our summer signals toward the oncoming autumn.", "desc_jp": "8月の終わりを告げる茜色の空。一直線に伸びる飛行機雲が、名残惜しい夏のシグナルを次の季節へと運んでいく。"}, {"ch": 25, "ch_label": "SERIES Ch.25", "title": "After-School Prism", "jp": "アフタースクール・プリズム — 誰もいない教室の虹", "img": "assets/series/ch_25.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---After-School-Prism---Wallpaper-Edition-1352221857", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---After-School-Prism-%5Bi%5D---The-Empty-Class-1352219750", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Series-Journal-Ch.25---Spectrum-in-the-Silence-1352223684", "journal_title": "Series Journal Ch.25 - Spectrum in the Silence", "mv_vid": "", "favs": 20, "sub_en": "A Private Rainbow in the Empty Classroom", "sub_jp": "アフタースクール・プリズム — 誰もいない教室の虹", "desc_en": "Staying late in the empty classroom as low sunbeams strike the dusty window, splitting the silence into a vivid private rainbow.", "desc_jp": "誰もいなくなった教室に残る放課後。夕陽が窓ガラスに当たり、机の上に鮮やかな虹色のスペクトルを描き出す。"}, {"ch": 24, "ch_label": "SERIES Ch.24", "title": "Freezing Signal", "jp": "フリージング・シグナル — 冷たい空気と絶対領域のぬくもり", "img": "assets/series/ch_24.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Freezing-Signal---Wallpaper-Edition-1346747735", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Freezing-Signal-%5Bi%5D---Absolute-Territory-1346740399", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Series-Journal-Ch.24---Absolute-Territory-and-Cold-1346749475", "journal_title": "Series Journal Ch.24 - Absolute Territory and Cold", "mv_vid": "", "favs": 35, "sub_en": "Cold Wind & Absolute Territory", "sub_jp": "フリージング・シグナル — 冷たい空気と絶対領域のぬくもり", "desc_en": "A crisp winter wind sweeps across the sidewalk—sharing a warm cup of cocoa where cold air meets intimate human warmth.", "desc_jp": "木枯らしが吹き抜ける冬の帰り道。冷たい空気とマフラーの温もり、そして隣を歩くあなたの体温が混ざり合う至近距離の記録。"}, {"ch": 23, "ch_label": "SERIES Ch.23", "title": "Unexpected Frequency", "jp": "アンエクスペクテッド — 図書室のセピア色と至近距離の鼓動", "img": "assets/series/ch_23.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Unexpected-Frequency---Desktop-Wallpaper-1344707173", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Unexpected-i---Sepia-Silence-1344704540", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Tsumugi---Ch.23---The-Distance-in-the-Library-1344709195", "journal_title": "Tsumugi - Ch.23 - The Distance in the Library", "mv_vid": "", "favs": 16, "sub_en": "Shared Books in the Sepia Library", "sub_jp": "アンエクスペクテッド — 図書室のセピア色と至近距離の鼓動", "desc_en": "In the sepia silence of the school library, reaching for the same book unexpectedly brings our breaths and heartbeats close.", "desc_jp": "セピア色に染まる放課後の図書室。同じ本に伸ばした指先が触れ合って、息が止まりそうになるほどの至近距離の鼓動。"}, {"ch": 22, "ch_label": "SERIES Ch.22", "title": "Crystal Frequency", "jp": "クリスタル・フリークエンシー — 透き通る音の結晶", "img": "assets/series/ch_22.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Crystal-Frequency---Desktop-Wallpaper-1341627785", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Crystal-Frequency-i---First-contact-1341625277", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Tsumugi---Ch.22---The-Crystal%27s-Breath-1341629118", "journal_title": "Tsumugi - Ch.22 - The Crystal's Breath", "mv_vid": "", "favs": 21, "sub_en": "The Pure Breath of Resonant Crystal", "sub_jp": "クリスタル・フリークエンシー — 透き通る音の結晶", "desc_en": "Touching a clear crystal bell; its sustained, transparent overtone washes every speck of haze from my synesthesia sight.", "desc_jp": "透き通るクリスタルの鐘に触れた瞬間。どこまでも響く透明な余韻が、瞳の奥の曇りをすべて清らかに洗い流してくれる。"}, {"ch": 21, "ch_label": "SERIES Ch.21", "title": "Submerged Frequency", "jp": "サブマージド — 水底に揺れる青い光のカウスティクス", "img": "assets/series/ch_21.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Submerged-Frequency---Desktop-Wallpaper-1341675682", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Submerged-Frequency-i---Sinking-down-1341674425", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Tsumugi---Ch.21---The-Sound-of-Water-and-Light-1341676146", "journal_title": "Tsumugi - Ch.21 - The Sound of Water and Light", "mv_vid": "", "favs": 25, "sub_en": "Submerged Light Caustics in the Deep Pool", "sub_jp": "サブマージド — 水底に揺れる青い光のカウスティクス", "desc_en": "Sinking into the quiet blue water where refracted sunlight paints undulating caustic ribbons of pure silence across the floor.", "desc_jp": "音のない深い水底へ。水面から差し込む陽光が屈折して、青いタイルの上にゆらゆらと光の帯を踊らせる静寂の世界。"}, {"ch": 20, "ch_label": "SERIES Ch.20", "title": "Afterglow Frequency", "jp": "アフターグロウ — 夕焼けの残光と赤い金魚の音", "img": "assets/series/ch_20.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Afterglow-Frequency---Desktop-Wallpaper-1341674966", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Afterglow-Frequency-i---Fading-light-1341671826", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Tsumugi---Ch.20---The-Sound-of-Red-Goldfish-1341676063", "journal_title": "Tsumugi - Ch.20 - The Sound of Red Goldfish", "mv_vid": "", "favs": 34, "sub_en": "Afterglow Twilight & the Sound of Goldfish", "sub_jp": "アフターグロウ — 夕焼けの残光と赤い金魚の音", "desc_en": "As the summer festival dusk fades into purple, red goldfish swimming in clear glass bowls leave radiant trails in the twilight air.", "desc_jp": "祭りの終わりの紫色の夕暮れ。金魚鉢の中で泳ぐ赤い金魚の尾ひれが、水面を揺らして残光の軌跡を描く。"}, {"ch": 19, "ch_label": "SERIES Ch.19", "title": "Sky Frequency", "jp": "スカイ・フリークエンシー — 風の楽器と雲の鍵盤", "img": "assets/series/ch_19.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Sky-Frequency---Desktop-Wallpaper-1341630041", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Sky-Frequency-i---The-wind%27s-instrument-1341628249", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Tsumugi---Ch.19---The-Sky%27s-Chord-1341629864", "journal_title": "Tsumugi - Ch.19 - The Sky's Chord", "mv_vid": "", "favs": 14, "sub_en": "The Wind's Keyboard & Drifting Clouds", "sub_jp": "スカイ・フリークエンシー — 風の楽器と雲の鍵盤", "desc_en": "Standing on a high grassy hill, watching the sky play the clouds like a vast keyboard of shifting light and shadow.", "desc_jp": "風が吹き抜ける高台の丘。空を流れる雲の形が、まるで光と影の巨大な鍵盤のように視界いっぱいに広がっていく。"}, {"ch": 18, "ch_label": "SERIES Ch.18", "title": "The Night Sea", "jp": "夜の海へのエスケープ — ヘッドホンを外した波打ち際", "img": "assets/series/ch_18.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---The-Night-Sea---Desktop-Wallpaper-1344690588", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---The-Night-Sea-i---The-Escape-1344689220", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Tsumugi---Ch.18---Escape-to-the-Night-Sea-1344690834", "journal_title": "Tsumugi - Ch.18 - Escape to the Night Sea", "mv_vid": "", "favs": 31, "sub_en": "Headphones Off at the Midnight Sea", "sub_jp": "夜の海へのエスケープ — ヘッドホンを外した波打ち際", "desc_en": "Escaping to the shoreline late at night and pulling off my headphones to hear the raw, beautiful resonance of the moonlit waves.", "desc_jp": "終電で辿り着いた夜の海。ヘッドホンを首にかけて素足で波打ち際に立つと、満月の光を浴びた純粋な波音が胸を満たしていく。"}, {"ch": 17, "ch_label": "SERIES Ch.17", "title": "Night Frequency", "jp": "ナイト・フリークエンシー — 真夜中のネオンと都市の交響曲", "img": "assets/series/ch_17.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Night-Frequency---Desktop-Wallpaper-1341623609", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Night-Frequency-i---Reading-the-city-1341617636", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Tsumugi---Ch.17---The-Night%27s-Orchestra-1341624772", "journal_title": "Tsumugi - Ch.17 - The Night's Orchestra", "mv_vid": "", "favs": 22, "sub_en": "The City's Midnight Nocturnal Symphony", "sub_jp": "ナイト・フリークエンシー — 真夜中のネオンと都市の交響曲", "desc_en": "Overlooking the neon metropolis from a quiet pedestrian bridge at 1:00 AM, where distant sirens compose an endless city symphony.", "desc_jp": "深夜1時の歩道橋から見下ろすネオンの海。遠くのサイレンと車の走る音が混ざり合う、巨大な都市のオーケストラ。"}, {"ch": 16, "ch_label": "SERIES Ch.16", "title": "Komorebi Frequencies", "jp": "木漏れ日フリークエンシー — 緑陰のベンチと黄金色の午後", "img": "assets/series/ch_16.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Komorebi-Frequencies---Desktop-Wallpaper-1339413577", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Komorebi-Frequencies-i---Sunbeams-1339408625", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Tsumugi---Ch.16---The-Noise-Between-the-Tracks-1342060163", "journal_title": "Tsumugi - Ch.16 - The Noise Between the Tracks", "mv_vid": "", "favs": 20, "sub_en": "Sunbeams & Acoustic Whispers on the Bench", "sub_jp": "木漏れ日フリークエンシー — 緑陰のベンチと黄金色の午後", "desc_en": "Resting beneath swaying green foliage as golden komorebi sunbeams dance in harmony with a gentle acoustic guitar.", "desc_jp": "木々の隙間からこぼれ落ちる陽光の粒。葉擦れの音とアコースティックの調べが混ざり合う、穏やかな緑陰のベンチ。"}, {"ch": 15, "ch_label": "SERIES Ch.15", "title": "Deep Resonance", "jp": "ディープ・レゾナンス — 雨のアスファルトと心の鎧", "img": "assets/series/ch_15.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Deep-Resonance-Wallpaper-1342062639", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Deep-Resonance-i---Sudden-Chill-1342061402", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Tsumugi---Ch.15---Rain-and-Armor-1342064451", "journal_title": "Tsumugi - Ch.15 - Rain and Armor", "mv_vid": "", "favs": 32, "sub_en": "Rain Reflections & Lowering the Heart's Armor", "sub_jp": "ディープ・レゾナンス — 雨のアスファルトと心の鎧", "desc_en": "Walking under a wide umbrella through neon puddles, learning how to lower the quiet armor I built around my heart.", "desc_jp": "冷たい雨に濡れる夜のアスファルト。傘の下でふたり並んで歩きながら、心を閉ざしていた見えない鎧を静かに解いていく。"}, {"ch": 14, "ch_label": "SERIES Ch.14", "title": "Silk Frequencies", "jp": "シルク・フリークエンシー — 指先に触れる絹の波長", "img": "assets/series/ch_14.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Silk-Frequencies---Wallpaper-Edition-1338967082", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Silk-Frequencies-i---Touch-1338967958", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Journal-Ch.14-%3A-The-Market%27s-Frequency-1339417578", "journal_title": "Journal Ch.14 : The Market's Frequency", "mv_vid": "", "favs": 13, "sub_en": "The Whispering Frequencies of Woven Silk", "sub_jp": "シルク・フリークエンシー — 指先に触れる絹の波長", "desc_en": "Wandering an open-air fabric market where colorful silk banners flutter, creating a soft, tactile symphony against the skin.", "desc_jp": "風に揺れる色鮮やかなシルクの布地。指先を滑る滑らかな感触が、耳元で繊細な衣擦れのメロディを奏でる。"}, {"ch": 13, "ch_label": "SERIES Ch.13", "title": "White Noise", "jp": "ホワイト・ノイズ — プリズムに溶ける静寂の記録", "img": "assets/series/ch_13.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/White-Noise-The-Prism-Record-1338659349", "s1_url": "https://www.deviantart.com/komorebigirls/art/T-S-U-M-U-G-I-%5B-White-Noise-i.-Prism-%5D-1338655625", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Journal-Ch.13%3A-White-Noise-1338659041", "journal_title": "Journal Ch.13: White Noise", "mv_vid": "", "favs": 19, "sub_en": "The Seven-Colored Spectrum in the Static", "sub_jp": "ホワイト・ノイズ — プリズムに溶ける静寂の記録", "desc_en": "When all overlapping noises in the city collide into pure white static, a secret prism of rainbow light blooms right before my eyes.", "desc_jp": "街のあらゆる音がぶつかり合って真っ白なノイズになった時、その静寂の奥から現れる七色のプリズムの光。"}, {"ch": 12, "ch_label": "SERIES Ch.12", "title": "Feline Frequencies", "jp": "フェライン・フリークエンシー — 午後の猫と重なる鼓動", "img": "assets/series/ch_12.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Feline-Frequencies---Desktop-Wallpaper-1337562009", "s1_url": "https://www.deviantart.com/komorebigirls/art/Feline-Frequencies-%5Bi%5D%3A-A-quiet-afternoon-1337562791", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Journal-Ch.12-%3A-The-Warmest-Frequency-1337570194", "journal_title": "Journal Ch.12 : The Warmest Frequency", "mv_vid": "", "favs": 17, "sub_en": "Syncing Heartbeats with a Sunny Cat", "sub_jp": "フェライン・フリークエンシー — 午後の猫と重なる鼓動", "desc_en": "A friendly cat curls on my lap in the sun-drenched alleyway, its low purr vibrating as a soft, comforting pulse in my fingertips.", "desc_jp": "陽だまりの路地裏で膝に乗ってきた猫。喉を鳴らす小さな震えが、自分の心臓の鼓動と重なって柔らかな温もりになる午後。"}, {"ch": 11, "ch_label": "SERIES Ch.11", "title": "Rust and Chimes", "jp": "ラスト＆チャイム — 誰も遊ばない公園の青い残響", "img": "assets/series/ch_11.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Rust-and-Chimes---Desktop-Wallpaper-1336800731", "s1_url": "https://www.deviantart.com/komorebigirls/art/Rust-and-Chimes-%5Bi%5D%3A-The-silent-park-1336801312", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Journal-Ch.11-%3A-The-Song-Nobody-Plays-1337569974", "journal_title": "Journal Ch.11 : The Song Nobody Plays", "mv_vid": "", "favs": 10, "sub_en": "A Song for the Silent Park at Dusk", "sub_jp": "ラスト＆チャイム — 誰も遊ばない公園の青い残響", "desc_en": "When the rusted spring horse creaks in the deserted twilight park, deep blue sound waves ripple through the cool evening air.", "desc_jp": "夕暮れの誰もいない寂れた公園。錆びついた遊具が軋むたびに、深い藍色の波紋が夕暮れの空気に吸い込まれていく。"}, {"ch": 10, "ch_label": "SERIES Ch.10", "title": "Chalk Resonance", "jp": "チョーク・レゾナンス — 午前8時の黒板と黄色い軌跡", "img": "assets/series/ch_10.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Chalk-Resonance---Desktop-Wallpaper-1332273819", "s1_url": "https://www.deviantart.com/komorebigirls/art/Chalk-Resonance-%5Bi%5D%3A-The-first-scratch-1336790995", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Journal-Ch.10-%3A-Fractured-Mornings-1332275114", "journal_title": "Journal Ch.10 : Fractured Mornings", "mv_vid": "", "favs": 9, "sub_en": "Yellow Fractures at the 8:00 AM Blackboard", "sub_jp": "チョーク・レゾナンス — 午前8時の黒板と黄色い軌跡", "desc_en": "The sharp tap and scratch of white chalk on the blackboard scatters tiny crystalline yellow fractures into the morning classroom air.", "desc_jp": "午前8時の当番。黒板を滑るチョークの乾いた摩擦音が、朝の光の中で小さな黄色い破片になって舞い散るひととき。"}, {"ch": 9, "ch_label": "SERIES Ch.09", "title": "Summer Frequencies", "jp": "サマー・フリークエンシー — 扇風機が刻むミント色の風", "img": "assets/series/ch_09.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Summer-Frequencies-1332269908", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Summer-Frequencies-1332257824", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Journal-Ch.09-%3A-Chopping-the-Heat-1332275276", "journal_title": "Journal Ch.09 : Chopping the Heat", "mv_vid": "", "favs": 12, "sub_en": "Chopping the Afternoon Heat into Mint Slices", "sub_jp": "サマー・フリークエンシー — 扇風機が刻むミント色の風", "desc_en": "The spinning electric fan chops the humid summer air into rhythmic pulses of cool mint-green light inside the quiet room.", "desc_jp": "熱気配る部屋で回る扇風機。重たい空気を等間隔に切り刻む羽の音が、目蓋の裏で淡いミントグリーンの帯になって流れていく。"}, {"ch": 8, "ch_label": "SERIES Ch.08", "title": "Cyan Spark", "jp": "シアン・スパーク — 100万粒の冷たい炭酸火花", "img": "assets/series/ch_08.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Cyan-Spark-1330954715", "s1_url": "https://www.deviantart.com/komorebigirls/art/Cyan-Spark-%5Bi%5D%3A-The-heat-is-orange-1329981028", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Tsumugi---Chapter-08%3A-A-Million-Cyan-Sparks-1329984218", "journal_title": "Tsumugi - Chapter 08: A Million Cyan Sparks", "mv_vid": "vR3tY_n7kL2", "favs": 16, "sub_en": "A Million Cyan Sparks in the Summer Heat", "sub_jp": "シアン・スパーク — 100万粒の冷たい炭酸火花", "desc_en": "Escaping the heavy orange summer heat on a park bench—twisting open a cold cider scatters a million icy cyan sparks across my vision.", "desc_jp": "ギラつく真夏のオレンジ色の熱気から逃げ込んだ木陰。冷たいサイダーを開けた瞬間、視界いっぱいに弾けた100万粒の青い火花。"}, {"ch": 7, "ch_label": "SERIES Ch.07", "title": "Ocean Frequency", "jp": "オーシャン・フリークエンシー — 潮騒の呼吸円", "img": "assets/series/ch_07.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Ocean-Frequency-1330952792", "s1_url": "https://www.deviantart.com/komorebigirls/art/Ocean-Frequency-%5Bi%5D%3A-Sound-of-the-waves-1329974876", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Tsumugi---Chapter-07%3A-The-Breathing-Circle-1329873990", "journal_title": "Tsumugi - Chapter 07: The Breathing Circle", "mv_vid": "mX9zQ_p4vW8", "favs": 15, "sub_en": "The Breathing Circle at the Water's Edge", "sub_jp": "オーシャン・フリークエンシー — 潮騒の呼吸円", "desc_en": "Standing barefoot at the twilight tide line, watching the ocean breathe in slow, luminous cobalt concentric circles.", "desc_jp": "夕暮れの砂浜、潮が引くたびに光る泡の粒。地球が呼吸するかのように広がる巨大なコバルトブルーの円環を見つめた時間。"}, {"ch": 6, "ch_label": "SERIES Ch.06", "title": "Disconnection", "jp": "ディスコネクション — フィルターが壊れる夜", "img": "assets/series/ch_06.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Disconnection-1330950492", "s1_url": "https://www.deviantart.com/komorebigirls/art/Disconnection-%5Bi%5D%3A-I-had-to-take-them-off-1328799885", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Tsumugi---Chapter-06%3A-When-the-Filter-Breaks-1329872484", "journal_title": "Tsumugi - Chapter 06: When the Filter Breaks", "mv_vid": "L2k8J_w9xR0", "favs": 12, "sub_en": "When the Noise Filter Breaks in the Blackout", "sub_jp": "ディスコネクション — フィルターが壊れる夜", "desc_en": "Caught in a sudden city-wide blackout and pouring rain, I tear off my noise-canceling headphones and dance to a raw 138 BPM rhythm.", "desc_jp": "突然の街の停電と土砂降りの雨。ノイズフィルターを脱ぎ捨てて、138BPMの剥き出しのビートで踊り明かす覚醒の夜。"}, {"ch": 5, "ch_label": "SERIES Ch.05", "title": "Morning Vending", "jp": "午前7時の自販機 — 107円の温かい琥珀色", "img": "assets/series/ch_05.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Morning-Vending-1330949684", "s1_url": "https://www.deviantart.com/komorebigirls/art/Morning-Vending-%5Bi%5D%3A-Why-I-always-buy-this-1327633046", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Journal-Ch.05%3A-The-Color-of-107-Yen-1327635663", "journal_title": "Journal Ch.05: The Color of 107 Yen", "mv_vid": "4H7f8_vE1pA", "favs": 11, "sub_en": "The Color of 107 Yen at 7:00 AM", "sub_jp": "午前7時の自販機 — 107円の温かい琥珀色", "desc_en": "Counting coins with cold fingers in front of the morning vending machine, where a small moment of kindness turns into an amber resonance.", "desc_jp": "午前7時の冷たい自販機の前、107円の小銭を数えて立ち止まる通学路。小さなぬくもりが琥珀色の共鳴へと変わる物語。"}, {"ch": 4, "ch_label": "SERIES Ch.04", "title": "After the Bell", "jp": "放課後のチャイム — 音楽室の金色ピアノ", "img": "assets/series/ch_04.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/After-the-Bell-1330952530", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---After-the-Bell-%5Bi%5D---Project-RESONANCE-1326378525", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Tsumugi---Chapter-04%3A-What-Gold-Sounds-Like-1326387118", "journal_title": "Tsumugi - Chapter 04: What Gold Sounds Like", "mv_vid": "9uF9m1vL6tQ", "favs": 13, "sub_en": "What Gold Sounds Like in the Music Room", "sub_jp": "放課後のチャイム — 音楽室の金色ピアノ", "desc_en": "5:30 PM after the final bell. In the empty sunset music room, the grand piano keys release ribbons of warm amber and golden light.", "desc_jp": "放課後のチャイムが鳴り響く夕暮れの音楽室。誰もいない部屋で奏でるピアノの音が、温かい黄金色のリボンになって空に溶けていく。"}, {"ch": 3, "ch_label": "SERIES Ch.03", "title": "Star Reception", "jp": "星空のレセプション — 屋上の銀色ノイズ", "img": "assets/series/ch_03.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Star-Reception-1330952314", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Star-Reception---Project-RESONANCE-1325892566", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Tsumugi---Chapter-03-%3A-The-Frequency-No-One-1325896515", "journal_title": "Tsumugi - Chapter 03 : The Frequency No One", "mv_vid": "cBnE2hT4b8U", "favs": 12, "sub_en": "Rooftop Starlight & Whispering Signals", "sub_jp": "星空のレセプション — 屋上の銀色ノイズ", "desc_en": "Standing on the windy school rooftop under a canopy of stars, catching a faint, silver frequency that no one else in the world noticed.", "desc_jp": "夜の屋上で見上げた満天の星空。街の誰も気づかない微かな銀色のノイズを受信した、ふたりだけのレセプション。"}, {"ch": 2, "ch_label": "SERIES Ch.02", "title": "Morning Signal", "jp": "雨上がりの朝 — 水たまりの波紋と光", "img": "assets/series/ch_02.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Morning-Signal-1330950806", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Morning-Signal---Project-RESONANCE-1325303875", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Tsumugi---Chapter-02-%3A-What-the-Rain-Left-Behind-1325304844", "journal_title": "Tsumugi - Chapter 02 : What the Rain Left Behind", "mv_vid": "q_feH1h0bZg", "favs": 18, "sub_en": "What the Rain Left Behind on the Asphalt", "sub_jp": "雨上がりの朝 — 水たまりの波紋と光", "desc_en": "After the midnight downpour, the morning sun turns every puddle on the school route into shimmering concentric rings of cyan and gold.", "desc_jp": "夜の豪雨が去った通学路。水たまりに反射する朝陽が、シアンと黄金色の煌めく同心円になって広がる爽快な朝。"}, {"ch": 1, "ch_label": "SERIES Ch.01", "title": "The Tower at 2AM", "jp": "午前2時の電波塔 — 眠らない都市の赤", "img": "assets/series/ch_01.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/Red-Light-Antenna-1330952943", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Red-Light-Antenna---Project-RESONANCE-1324572551", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Tsumugi---Chapter-01---The-Tower-at-2AM-1325326816", "journal_title": "Tsumugi - Chapter 01 - The Tower at 2AM", "mv_vid": "bfw8d-v2y2Y", "favs": 19, "sub_en": "The Sleepless Tower at 2:00 AM", "sub_jp": "午前2時の電波塔 — 眠らない都市の赤", "desc_en": "Looking up at the blinking red light of the radio tower at 2:00 AM, searching for another awake soul across the quiet metropolis.", "desc_jp": "午前2時、遠くで点滅する赤い航空障害灯を見上げながら、眠らない街のどこかにいる「あなた」の波長を探す静かな夜。"}, {"ch": 0, "ch_label": "PROLOGUE (Ch.00)", "title": "The First Frequency", "jp": "最初の周波数 — 覚醒のプロローグ", "img": "assets/series/ch_00.jpg", "wp_url": "https://www.deviantart.com/komorebigirls/art/The-First-Frequency-1330951344", "s1_url": "https://www.deviantart.com/komorebigirls/art/Tsumugi---Resonance-Field---Project-RESONANCE-1324246791", "journal_url": "https://www.deviantart.com/komorebigirls/journal/Tsumugi-Chapter-00-%3A-The-First-Frequency-1324258447", "journal_title": "Tsumugi  Chapter 00 : The First Frequency", "mv_vid": "K8ef-cd086E", "favs": 22, "sub_en": "Awakening of Synesthesia — The Origin", "sub_jp": "最初の周波数 — 覚醒のプロローグ", "desc_en": "Where everything began. Opening my eyes to overlapping city waveforms and tuning into your signal for the very first time.", "desc_jp": "すべてが始まった原点。ヘッドホン越しに重なり合う都市の波長を見つめ、あなたのシグナルに初めてチューニングを合わせた瞬間。"}];
@@ -1510,20 +1545,29 @@ function buildMasterpieceSelection(reShuffle) {
   return basePool.length;
 }
 
+function reshuffleGallery() {
+  currentGalleryMode = 'random';
+  renderGallery(true);
+}
+
+function setGalleryFilter(cat, btn) {
+  currentGalleryCat = cat;
+  currentGalleryMode = 'random';
+  if (btn) {
+    document.querySelectorAll('.gallery-filter-bar .filter-btn, .gallery-filter-bar .filter-pill').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  renderGallery(true);
+}
+
 function renderGallery(reShuffle = false) {
   const totalInCat = buildMasterpieceSelection(reShuffle);
   const isJp = document.documentElement.getAttribute('data-lang') === 'jp';
   const statusEl = document.getElementById('poolStatusBar');
   if (statusEl) {
-    if (currentGalleryMode === 'random') {
-      statusEl.textContent = isJp
-        ? `🎲 現在、対象プール（全 ${totalInCat} 作品）の中からランダムに選ばれた ${displayedMasterpieces.length} 作品を表示中（シリーズ作品は除外済）`
-        : `🎲 Showing ${displayedMasterpieces.length} randomly selected works from ${totalInCat} non-series works in this category`;
-    } else {
-      statusEl.textContent = isJp
-        ? `📚 対象プール（全 ${totalInCat} 作品）から ${displayedMasterpieces.length} 作品を表示中`
-        : `📚 Showing ${displayedMasterpieces.length} works (out of ${totalInCat})`;
-    }
+    statusEl.textContent = isJp
+      ? `🎲 現在、ランダムに選ばれた ${displayedMasterpieces.length} 作品を表示中（再抽選ボタンで入れ替わります）`
+      : `🎲 Showing ${displayedMasterpieces.length} randomly selected works (Click reshuffle to explore more)`;
   }
 
   const grid = document.getElementById('galleryGrid');
