@@ -12,3 +12,5 @@ Official sanctuary website of Tsumugi (紡), synesthesia schoolgirl muse of Proj
 
 ## Deployed on
 Cloudflare Pages / Workers
+
+<!-- Cloudflare Auto-Deploy Verified: 2026-10-25 -->
