@@ -1,0 +1,7 @@
+.git
+.git/**
+.gitignore
+.assetsignore
+.cloudflareignore
+wrangler.json
+README.md
